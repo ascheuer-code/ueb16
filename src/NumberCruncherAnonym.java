@@ -2,6 +2,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * ueb 16 - NumberCruncherAnonym Klasse
+ * 
+ * @author Simon Klasen & Andreas Scheuer
+ * @version 0.1
+ */
+
 public class NumberCruncherAnonym {
     private float[] array;
     private ArrayList<Operation> operators;
@@ -70,7 +77,9 @@ public class NumberCruncherAnonym {
         public void function() {
             Arrays.sort(array);
             for (int i = 0; i < array.length; i++) {
-                array[array.length - 1 - i] /= array[i];
+                if ((array.length - 1 - i) > i) {
+                    array[array.length - 1 - i] /= array[i];
+                }
             }
         }
 
@@ -84,7 +93,7 @@ public class NumberCruncherAnonym {
         @Override
         public void function() {
             for (int i = 0; i < array.length - 1; i++) {
-                array[i+1] -= array[i];
+                array[i+1] = array[i] - array[i+1];
             }
         }
 

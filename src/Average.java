@@ -1,3 +1,10 @@
+/**
+ * ueb 16 - Average Top Level Klasse
+ * 
+ * @author Simon Klasen & Andreas Scheuer
+ * @version 0.1
+ */
+
 public class Average implements CrunchOperation{
     public void crunch(float values[]) {
         float sum = 0;

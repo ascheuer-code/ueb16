@@ -1,5 +1,12 @@
 import java.util.Random;
 
+/**
+ * ueb 16 - Swirl Top Level Klasse
+ * 
+ * @author Simon Klasen & Andreas Scheuer
+ * @version 0.1
+ */
+
 public class Swirl implements CrunchOperation{
     public void crunch(float values[]) {
         int n = values.length;
