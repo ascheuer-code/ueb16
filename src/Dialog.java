@@ -191,10 +191,6 @@ public class Dialog extends Lib_Dialog {
         System.out.println("Operator Sum wurde angewendet");
     }
 
-    public void ende() {
-        System.exit(0);
-    }
-
     private void printAll(NumberCruncherAnonym object) {
         System.out.println();
         float numbers[] = object.getNumbers();
@@ -232,6 +228,10 @@ public class Dialog extends Lib_Dialog {
         System.out.println();
         object.crunch(sum);
         System.out.println("Operator Sum wurde angewendet");
+    }
+
+    public void ende() {
+        System.exit(0);
     }
 
 }
