@@ -24,125 +24,11 @@ public class Dialog extends Lib_Dialog {
     private static String[] subtract = { "subtract" };
     private static String[] average = { "average" };
 
-    public void start() throws InstantiationException, IllegalAccessException, IllegalArgumentException,
-            InvocationTargetException, NoSuchMethodException, SecurityException {
+    public void start() {
 
         menu1 = new ArrayList<String>();
         menu2 = new ArrayList<String>();
         menu3 = new ArrayList<String>();
-
-    }
-
-    // option2 = startMenu2();
-
-    // if (option2 == 1) {
-    //
-    // while (option3 != 7) {
-    // option3 = startMenu3();
-    // switch (option3) {
-    // case 1:
-    // System.out.println();
-    // object.crunch(sum);
-    // System.out.println("Operator Sum wurde angewendet");
-    // break;
-    // case 2:
-    // System.out.println();
-    // object.crunch(swirl);
-    // System.out.println("Operator Swirl wurde angewendet");
-    // break;
-    // case 3:
-    // System.out.println();
-    // object.crunch(divide);
-    // System.out.println("Operator Divide wurde angewendet");
-    // break;
-    // case 4:
-    // System.out.println();
-    // object.crunch(subtract);
-    // System.out.println("Operator Subtract wurde angewendet");
-    // break;
-    // case 5:
-    // System.out.println();
-    // object.crunch(average);
-    // System.out.println("Operator Average wurde angewendet");
-    // break;
-    // case 6:
-    // System.out.println();
-    // float numbers[] = object.getNumbers();
-    // for (float number : numbers) {
-    // System.out.print(number + " ");
-    // }
-    // System.out.println();
-    // break;
-    // }
-    // }
-    // } else {
-    // NumberCruncherTopLevel object = new NumberCruncherTopLevel(values);
-    // while (option3 != 7) {
-    // option3 = startMenu3();
-    // switch (option3) {
-    // case 1:
-    // System.out.println();
-    // object.crunch(sum);
-    // System.out.println("Operator Sum wurde angewendet");
-    // break;
-    // case 2:
-    // System.out.println();
-    // object.crunch(swirl);
-    // System.out.println("Operator Swirl wurde angewendet");
-    // break;
-    // case 3:
-    // System.out.println();
-    // object.crunch(divide);
-    // System.out.println("Operator Divide wurde angewendet");
-    // break;
-    // case 4:
-    // System.out.println();
-    // object.crunch(subtract);
-    // System.out.println("Operator Subtract wurde angewendet");
-    // break;
-    // case 5:
-    // System.out.println();
-    // object.crunch(average);
-    // System.out.println("Operator Average wurde angewendet");
-    // break;
-    // case 6:
-    // System.out.println();
-    // float numbers[] = object.getNumbers();
-    // for (float number : numbers) {
-    // System.out.print(number + " ");
-    // }
-    // System.out.println();
-    // break;
-    // }
-    // }
-    // }
-    // }
-
-    public int startMenu1() {
-        System.out.println();
-        System.out.println("ARRAY BEFUELLEN:");
-
-        printMenue(menu1);
-        return chooseOption();
-    }
-
-    public int startMenu2() {
-        System.out.println();
-        System.out.println("KLASSE WAEHLEN:");
-
-        printMenue(menu2);
-        return chooseOption();
-    }
-
-    public int startMenu3() {
-        System.out.println();
-        System.out.println("OPERATOR WAEHLEN:");
-        printMenue(menu3);
-        return chooseOption();
-    }
-
-    public void ausfuehrenMenu3(int option) {
-
     }
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException,
@@ -216,8 +102,7 @@ public class Dialog extends Lib_Dialog {
         new Lib_Dialog().start(menu2, classObject);
     }
 
-    public void numberCruncherAnonym() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-            ClassNotFoundException, InstantiationException {
+    public void numberCruncherAnonym() {
         NumberCruncherAnonym object = new NumberCruncherAnonym(values);
         Lib_Dialog.printMenue(menu3);
         int option = chooseOption();
@@ -243,47 +128,7 @@ public class Dialog extends Lib_Dialog {
         }
     }
 
-    private void printAll(NumberCruncherAnonym object) {
-        System.out.println();
-        float numbers[] = object.getNumbers();
-        for (float number : numbers) {
-            System.out.print(number + " ");
-        }
-        System.out.println();
-    }
-
-    private void average(NumberCruncherAnonym object) {
-        System.out.println();
-        object.crunch(average);
-        System.out.println("Operator Average wurde angewendet");
-    }
-
-    private void substract(NumberCruncherAnonym object) {
-        System.out.println();
-        object.crunch(subtract);
-        System.out.println("Operator Subtract wurde angewendet");
-    }
-
-    private void divide(NumberCruncherAnonym object) {
-        System.out.println();
-        object.crunch(divide);
-        System.out.println("Operator Divide wurde angewendet");
-    }
-
-    private void swirl(NumberCruncherAnonym object) {
-        System.out.println();
-        object.crunch(swirl);
-        System.out.println("Operator Swirl wurde angewendet");
-    }
-
-    private void sum(NumberCruncherAnonym object) {
-        System.out.println();
-        object.crunch(sum);
-        System.out.println("Operator Sum wurde angewendet");
-    }
-
-    public void cruncherTopLevel() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-            ClassNotFoundException, InstantiationException {
+    public void cruncherTopLevel() {
         NumberCruncherTopLevel object = new NumberCruncherTopLevel(values);
         Lib_Dialog.printMenue(menu3);
         int option = Lib_Dialog.chooseOption();
@@ -350,6 +195,45 @@ public class Dialog extends Lib_Dialog {
 
     public void ende() {
         System.exit(0);
+    }
+
+    private void printAll(NumberCruncherAnonym object) {
+        System.out.println();
+        float numbers[] = object.getNumbers();
+        for (float number : numbers) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+
+    private void average(NumberCruncherAnonym object) {
+        System.out.println();
+        object.crunch(average);
+        System.out.println("Operator Average wurde angewendet");
+    }
+
+    private void substract(NumberCruncherAnonym object) {
+        System.out.println();
+        object.crunch(subtract);
+        System.out.println("Operator Subtract wurde angewendet");
+    }
+
+    private void divide(NumberCruncherAnonym object) {
+        System.out.println();
+        object.crunch(divide);
+        System.out.println("Operator Divide wurde angewendet");
+    }
+
+    private void swirl(NumberCruncherAnonym object) {
+        System.out.println();
+        object.crunch(swirl);
+        System.out.println("Operator Swirl wurde angewendet");
+    }
+
+    private void sum(NumberCruncherAnonym object) {
+        System.out.println();
+        object.crunch(sum);
+        System.out.println("Operator Sum wurde angewendet");
     }
 
 }
