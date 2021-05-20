@@ -161,7 +161,7 @@ public class Dialog extends Lib_Dialog {
         System.out.println();
     }
 
-    private void average(Object object) {
+    private void average(NumberCruncherTopLevel object) {
         System.out.println();
         object.crunch(average);
         System.out.println("Operator Average wurde angewendet");
