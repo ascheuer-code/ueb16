@@ -55,10 +55,10 @@ public class NumberCruncherAnonym {
         @Override
         public void function() {
             int n = array.length;
-            int random1 = new Random().nextInt(array.length);
-            int random2 = new Random().nextInt(array.length);
 
             while (n > 0) {
+                int random1 = new Random().nextInt(array.length);
+                int random2 = new Random().nextInt(array.length);
                 float x = array[random1];
                 array[random1] = array[random2];
                 array[random2] = x;
