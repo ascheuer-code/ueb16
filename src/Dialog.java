@@ -15,7 +15,7 @@ public class Dialog extends Lib_Dialog {
     private static ArrayList<String> menu2;
     private static ArrayList<String> menu3;
     private static Object classObject;
-    public float[] values;
+    private float[] values;
     private static String[] sum = { "sum" };
     private static String[] swirl = { "swirl" };
     private static String[] divide = { "divide" };
@@ -102,7 +102,7 @@ public class Dialog extends Lib_Dialog {
 
     public void numberCruncherAnonym() {
         NumberCruncherAnonym object = new NumberCruncherAnonym(values);
-        Lib_Dialog.printMenue(menu3);
+        printMenue(menu3);
         int option = chooseOption();
         switch (option) {
             case 1:
@@ -128,8 +128,8 @@ public class Dialog extends Lib_Dialog {
 
     public void cruncherTopLevel() {
         NumberCruncherTopLevel object = new NumberCruncherTopLevel(values);
-        Lib_Dialog.printMenue(menu3);
-        int option = Lib_Dialog.chooseOption();
+        printMenue(menu3);
+        int option = chooseOption();
         switch (option) {
             case 1:
                 sum(object);

@@ -27,7 +27,7 @@ public class Lib_Dialog {
             IllegalAccessException, InvocationTargetException, InstantiationException {
 
         input = new Scanner(System.in);
-        final int ENDE = Lib_Arrays.countArrayListIndex(menue) + 1;
+        final int ENDE = -2;
 
         while (option != ENDE) {
             try {
