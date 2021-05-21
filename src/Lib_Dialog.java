@@ -23,11 +23,10 @@ public class Lib_Dialog {
      * Eigentliche Startmethode
      */
 
-    public void start(ArrayList<String> menue, Object o) throws ClassNotFoundException, NoSuchMethodException,
-            IllegalAccessException, InvocationTargetException, InstantiationException {
+    public void start(ArrayList<String> menue, Object o) {
 
         input = new Scanner(System.in);
-        final int ENDE = -2;
+        final int ENDE = -5;
 
         while (option != ENDE) {
             try {
@@ -38,7 +37,7 @@ public class Lib_Dialog {
                 System.out.println("\n" + msg + ": Kein korrekter Wert");
                 input.nextLine();
             } catch (Exception e) {
-                System.out.println(e.getCause());
+                System.out.println(e);
             }
         }
 
@@ -74,7 +73,9 @@ public class Lib_Dialog {
     public static int chooseOption() {
 
         System.out.print("\nPlease choose a Option\n");
+
         return input.nextInt();
+
     }
 
     /**
@@ -87,6 +88,7 @@ public class Lib_Dialog {
     public static void ausfuehrenFunktion(ArrayList<String> menue, int option, Object o)
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
+        Lib_Digits.checkSpan(0, menue.size(), option, "Option");
         Method method = o.getClass().getMethod(Lib_String.menueToMethod(menue.get(option - 1)));
         method.invoke(o);
     }
