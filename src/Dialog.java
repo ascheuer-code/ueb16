@@ -100,7 +100,7 @@ public class Dialog {
     public void numberCruncherAnonym() {
         NumberCruncherAnonym object = new NumberCruncherAnonym(values);
         Lib_Dialog.printMenue(menu3);
-        int option = Lib_Dialog.chooseOption();
+        int option = Lib_Dialog.chooseOption(menu3);
         switch (option) {
             case 1:
                 sum(object);
@@ -126,7 +126,7 @@ public class Dialog {
     public void cruncherTopLevel() {
         NumberCruncherTopLevel object = new NumberCruncherTopLevel(values);
         Lib_Dialog.printMenue(menu3);
-        int option = Lib_Dialog.chooseOption();
+        int option = Lib_Dialog.chooseOption(menu3);
         switch (option) {
             case 1:
                 sum(object);
