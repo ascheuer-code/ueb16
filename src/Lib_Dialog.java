@@ -28,13 +28,14 @@ public class Lib_Dialog {
         while (option != ENDE) {
             try {
                 printMenue(menue);
-                option = chooseOption();
+                option = chooseOption(menue);
                 ausfuehrenFunktion(menue, option, classObject);
             } catch (InputMismatchException msg) {
                 System.out.println("\n" + msg + ": Kein korrekter Wert");
                 input.nextLine();
             } catch (Exception e) {
                 System.out.println(e);
+                System.out.println(e.getCause());
             }
         }
 
@@ -67,11 +68,13 @@ public class Lib_Dialog {
      * @return int Menuepunkt
      */
 
-    public static int chooseOption() {
+    public static int chooseOption(ArrayList<String> menue) {
 
         System.out.print("\nPlease choose a Option\n");
+        int options = input.nextInt();
 
-        return input.nextInt();
+        Lib_Digits.checkSpan(1, menue.size(), options, "Option");
+        return options;
 
     }
 
@@ -85,7 +88,6 @@ public class Lib_Dialog {
     public static void ausfuehrenFunktion(ArrayList<String> menue, int option, Object classObject)
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
-        Lib_Digits.checkSpan(0, menue.size(), option, "Option");
         Method method = classObject.getClass().getMethod(Lib_String.menueToMethod(menue.get(option - 1)));
         method.invoke(classObject);
     }

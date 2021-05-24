@@ -56,6 +56,7 @@ public class Dialog {
         System.out.println("ARRAY MANUELL BEFUELLEN:\n");
         System.out.print("Anzahl Werte: ");
         int anzahl = Lib_Dialog.input.nextInt();
+        Lib_Digits.checkMin(1, anzahl, "Anzahl Werte:");
         values = new float[anzahl];
         System.out.println();
         for (int i = 0; i < anzahl; i++) {
@@ -76,6 +77,7 @@ public class Dialog {
         System.out.println("ARRAY ZUFAELLIG BEFUELLEN:\n");
         System.out.print("Anzahl Werte: ");
         int anzahl = Lib_Dialog.input.nextInt();
+        Lib_Digits.checkMin(1, anzahl, "Anzahl Werte:");
         System.out.println();
         System.out.print("min-Wert: ");
         float min = Lib_Dialog.input.nextFloat();
