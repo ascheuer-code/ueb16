@@ -6,10 +6,7 @@ import java.util.Scanner;
 
 /* In die Main einfügen
 *
-* Class<?> cls = Class.forName("klassennamen");
-        classObject = cls.getDeclaredConstructor().newInstance();
-
-        new Lib_Dialog().start(menu1, classObject);
+* classObject = new Main(); - (Main representiert die Klasse in der die Dialog Logik hinterlegt ist)
 *
 */
 
@@ -23,7 +20,7 @@ public class Lib_Dialog {
      * Eigentliche Startmethode
      */
 
-    public void start(ArrayList<String> menue, Object o) {
+    public void start(ArrayList<String> menue, Object classObject) {
 
         input = new Scanner(System.in);
         final int ENDE = -5;
@@ -32,7 +29,7 @@ public class Lib_Dialog {
             try {
                 printMenue(menue);
                 option = chooseOption();
-                ausfuehrenFunktion(menue, option, o);
+                ausfuehrenFunktion(menue, option, classObject);
             } catch (InputMismatchException msg) {
                 System.out.println("\n" + msg + ": Kein korrekter Wert");
                 input.nextLine();
@@ -85,12 +82,12 @@ public class Lib_Dialog {
      * @param option Optionsauswahl von chooseOption()
      */
 
-    public static void ausfuehrenFunktion(ArrayList<String> menue, int option, Object o)
+    public static void ausfuehrenFunktion(ArrayList<String> menue, int option, Object classObject)
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
         Lib_Digits.checkSpan(0, menue.size(), option, "Option");
-        Method method = o.getClass().getMethod(Lib_String.menueToMethod(menue.get(option - 1)));
-        method.invoke(o);
+        Method method = classObject.getClass().getMethod(Lib_String.menueToMethod(menue.get(option - 1)));
+        method.invoke(classObject);
     }
 
 }

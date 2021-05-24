@@ -1,4 +1,3 @@
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,7 +8,7 @@ import java.util.Random;
  * @version 0.1
  */
 
-public class Dialog extends Lib_Dialog {
+public class Dialog {
 
     private static ArrayList<String> menu1;
     private static ArrayList<String> menu2;
@@ -29,8 +28,7 @@ public class Dialog extends Lib_Dialog {
         menu3 = new ArrayList<String>();
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException,
-            InvocationTargetException, InstantiationException {
+    public static void main(String[] args) {
 
         new Dialog().start();
 
@@ -48,23 +46,21 @@ public class Dialog extends Lib_Dialog {
         menu3.add("Average");
         menu3.add("Array ausgeben");
 
-        Class<?> cls = Class.forName("Dialog");
-        classObject = cls.getDeclaredConstructor().newInstance();
+        classObject = new Dialog();
 
         new Lib_Dialog().start(menu1, classObject);
     }
 
-    public void arrayManuellBefuellen() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-            ClassNotFoundException, InstantiationException {
+    public void arrayManuellBefuellen() {
         System.out.println();
         System.out.println("ARRAY MANUELL BEFUELLEN:\n");
         System.out.print("Anzahl Werte: ");
-        int anzahl = input.nextInt();
+        int anzahl = Lib_Dialog.input.nextInt();
         values = new float[anzahl];
         System.out.println();
         for (int i = 0; i < anzahl; i++) {
             System.out.print(i + 1 + ". Zahl: ");
-            values[i] = input.nextFloat();
+            values[i] = Lib_Dialog.input.nextFloat();
         }
         System.out.print("\nIhr Array: ");
         for (float value : values) {
@@ -75,17 +71,16 @@ public class Dialog extends Lib_Dialog {
         new Lib_Dialog().start(menu2, classObject);
     }
 
-    public void arrayZufaelligBefuellen() throws NoSuchMethodException, IllegalAccessException,
-            InvocationTargetException, ClassNotFoundException, InstantiationException {
+    public void arrayZufaelligBefuellen() {
         System.out.println();
         System.out.println("ARRAY ZUFAELLIG BEFUELLEN:\n");
         System.out.print("Anzahl Werte: ");
-        int anzahl = input.nextInt();
+        int anzahl = Lib_Dialog.input.nextInt();
         System.out.println();
         System.out.print("min-Wert: ");
-        float min = input.nextFloat();
+        float min = Lib_Dialog.input.nextFloat();
         System.out.print("max-Wert: ");
-        float max = input.nextFloat();
+        float max = Lib_Dialog.input.nextFloat();
         values = new float[anzahl];
         for (int i = 0; i < anzahl; i++) {
             float value = new Random().nextFloat() * (max - min) + min;
@@ -102,8 +97,8 @@ public class Dialog extends Lib_Dialog {
 
     public void numberCruncherAnonym() {
         NumberCruncherAnonym object = new NumberCruncherAnonym(values);
-        printMenue(menu3);
-        int option = chooseOption();
+        Lib_Dialog.printMenue(menu3);
+        int option = Lib_Dialog.chooseOption();
         switch (option) {
             case 1:
                 sum(object);
@@ -128,8 +123,8 @@ public class Dialog extends Lib_Dialog {
 
     public void cruncherTopLevel() {
         NumberCruncherTopLevel object = new NumberCruncherTopLevel(values);
-        printMenue(menu3);
-        int option = chooseOption();
+        Lib_Dialog.printMenue(menu3);
+        int option = Lib_Dialog.chooseOption();
         switch (option) {
             case 1:
                 sum(object);
