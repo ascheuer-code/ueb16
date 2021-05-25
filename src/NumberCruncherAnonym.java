@@ -13,6 +13,10 @@ public class NumberCruncherAnonym {
     private float[] array;
     private ArrayList<Operation> operators;
 
+    /**
+     * Konstruktor
+     * @param array übergebens Float Array
+     */
     public NumberCruncherAnonym(float[] array) {
         this.array = array;
         operators = new ArrayList<Operation>();
@@ -23,6 +27,10 @@ public class NumberCruncherAnonym {
         operators.add(average);
     }
 
+    /**
+     * Methode zum Entscheiden welche Operation angewendet wird
+     * @param operations übergebenes String Array mit den Operatoren
+     */
     public void crunch(String[] operations) {
         for (String operation : operations) {
             for (Operation operator : operators) {
@@ -37,6 +45,9 @@ public class NumberCruncherAnonym {
         return array;
     }
 
+    /**
+     * Anonyme sum Klasse
+     */
     Operation sum = new Operation() {
         @Override
         public void function() {
@@ -51,6 +62,9 @@ public class NumberCruncherAnonym {
         }
     };
 
+    /**
+     * Anonyme swirl Klasse
+     */
     Operation swirl = new Operation() {
         @Override
         public void function() {
@@ -72,6 +86,9 @@ public class NumberCruncherAnonym {
         }
     };
 
+    /**
+     * Anonyme divide Klasse
+     */
     Operation divide = new Operation() {
         @Override
         public void function() {
@@ -89,6 +106,9 @@ public class NumberCruncherAnonym {
         }
     };
 
+    /**
+     * Anonyme subtract Klasse
+     */
     Operation subtract = new Operation() {
         @Override
         public void function() {
@@ -103,6 +123,9 @@ public class NumberCruncherAnonym {
         }
     };
 
+    /**
+     * Anonyme average Klasse
+     */
     Operation average = new Operation() {
         @Override
         public void function() {
@@ -125,6 +148,9 @@ public class NumberCruncherAnonym {
         }
     };
 
+    /**
+     * Operation Interface
+     */
     public interface Operation {
         public void function();
         public String getOperation();

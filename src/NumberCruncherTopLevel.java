@@ -8,10 +8,18 @@
 public class NumberCruncherTopLevel {
     float array[];
 
+    /**
+     * Konstruktor
+     * @param array übergebenes Float Array
+     */
     public NumberCruncherTopLevel(float[] array) {
         this.array = array;
     }
 
+    /**
+     * Methode zum Entscheiden welcher Operator verwendet wird
+     * @param operations übergebenes String Array mit Operatoren
+     */
     public void crunch(String[] operations) {
         for (String operation : operations) {
             if (operation.toLowerCase().equals("sum")) {

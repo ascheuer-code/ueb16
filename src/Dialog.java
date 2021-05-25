@@ -21,6 +21,9 @@ public class Dialog {
     private static String[] subtract = { "subtract" };
     private static String[] average = { "average" };
 
+    /**
+     * eigentliche Startmethode
+     */
     public void start() {
 
         menu1 = new ArrayList<String>();
@@ -28,6 +31,10 @@ public class Dialog {
         menu3 = new ArrayList<String>();
     }
 
+    /**
+     * Startmethode
+     * @param args übergebene Argumente über Kommandozeile
+     */
     public static void main(String[] args) {
 
         new Dialog().start();
@@ -51,6 +58,9 @@ public class Dialog {
         new Lib_Dialog().start(menu1, classObject);
     }
 
+    /**
+     * Methode zum manuellen Befuellen des Arrays
+     */
     public void arrayManuellBefuellen() {
         System.out.println();
         System.out.println("ARRAY MANUELL BEFUELLEN:\n");
@@ -72,6 +82,9 @@ public class Dialog {
         new Lib_Dialog().start(menu2, classObject);
     }
 
+    /**
+     * Methode zum automatischen Befuellen des Arrays
+     */
     public void arrayZufaelligBefuellen() {
         System.out.println();
         System.out.println("ARRAY ZUFAELLIG BEFUELLEN:\n");
@@ -97,6 +110,9 @@ public class Dialog {
         new Lib_Dialog().start(menu2, classObject);
     }
 
+    /**
+     * Methode für Klasse numberCruncherAnonym
+     */
     public void numberCruncherAnonym() {
         NumberCruncherAnonym object = new NumberCruncherAnonym(values);
         Lib_Dialog.printMenue(menu3);
@@ -123,6 +139,9 @@ public class Dialog {
         }
     }
 
+    /**
+     * Methode für Klasse numberCruncherTopLevel
+     */
     public void cruncherTopLevel() {
         NumberCruncherTopLevel object = new NumberCruncherTopLevel(values);
         Lib_Dialog.printMenue(menu3);
@@ -149,6 +168,10 @@ public class Dialog {
         }
     }
 
+    /**
+     * Methode zum Ausgeben des Arrays 
+     * @param object NumberCruncherTopLevel Objekt
+     */
     private void printAll(NumberCruncherTopLevel object) {
         System.out.println();
         float numbers[] = object.getNumbers();
@@ -158,36 +181,60 @@ public class Dialog {
         System.out.println();
     }
 
+    /**
+     * Methode für die average Berechnung
+     * @param object NumberCruncherTopLevel Objekt
+     */
     private void average(NumberCruncherTopLevel object) {
         System.out.println();
         object.crunch(average);
         System.out.println("Operator Average wurde angewendet");
     }
 
+    /**
+     * Methode für die subtract Berechnung
+     * @param object NumberCruncherTopLevel Objekt
+     */
     private void substract(NumberCruncherTopLevel object) {
         System.out.println();
         object.crunch(subtract);
         System.out.println("Operator Subtract wurde angewendet");
     }
 
+    /**
+     * Methode für die divide Berechnung
+     * @param object NumberCruncherTopLevel Objekt
+     */
     private void divide(NumberCruncherTopLevel object) {
         System.out.println();
         object.crunch(divide);
         System.out.println("Operator Divide wurde angewendet");
     }
 
+    /**
+     * Methode für die swirl Berechnung
+     * @param object NumberCruncherTopLevel Objekt
+     */
     private void swirl(NumberCruncherTopLevel object) {
         System.out.println();
         object.crunch(swirl);
         System.out.println("Operator Swirl wurde angewendet");
     }
 
+    /**
+     * Methode für die sum Berechnung
+     * @param object NumberCruncherTopLevel Objekt
+     */
     private void sum(NumberCruncherTopLevel object) {
         System.out.println();
         object.crunch(sum);
         System.out.println("Operator Sum wurde angewendet");
     }
 
+    /**
+     * Methode zum Ausgeben des Arrays 
+     * @param object NumberCruncherAnonym Objekt
+     */
     private void printAll(NumberCruncherAnonym object) {
         System.out.println();
         float numbers[] = object.getNumbers();
@@ -197,36 +244,59 @@ public class Dialog {
         System.out.println();
     }
 
+    /**
+     * Methode für die average Berechnung
+     * @param object NumberCruncherAnonym Obejekt
+     */
     private void average(NumberCruncherAnonym object) {
         System.out.println();
         object.crunch(average);
         System.out.println("Operator Average wurde angewendet");
     }
 
+    /**
+     * Methode für die subtract Berechnung
+     * @param object NumberCruncherAnonym Obejekt
+     */
     private void substract(NumberCruncherAnonym object) {
         System.out.println();
         object.crunch(subtract);
         System.out.println("Operator Subtract wurde angewendet");
     }
 
+    /**
+     * Methode für die divide Berechnung
+     * @param object NumberCruncherAnonym Obejekt
+     */
     private void divide(NumberCruncherAnonym object) {
         System.out.println();
         object.crunch(divide);
         System.out.println("Operator Divide wurde angewendet");
     }
 
+    /**
+     * Methode für die swirl Berechnung
+     * @param object NumberCruncherAnonym Obejekt
+     */
     private void swirl(NumberCruncherAnonym object) {
         System.out.println();
         object.crunch(swirl);
         System.out.println("Operator Swirl wurde angewendet");
     }
 
+    /**
+     * Methode für die sum Berechnung
+     * @param object NumberCruncherAnonym Obejekt
+     */
     private void sum(NumberCruncherAnonym object) {
         System.out.println();
         object.crunch(sum);
         System.out.println("Operator Sum wurde angewendet");
     }
 
+    /**
+     * Methode zum Beenden des Programms
+     */
     public void ende() {
         System.exit(0);
     }
